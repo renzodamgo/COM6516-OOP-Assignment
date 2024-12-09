@@ -15,7 +15,8 @@ public class MyLinkedObject {
 //        this object. You may consider use of error handling if w violates the above assumption.
         int comparison = w.compareTo(this.word);
         if (comparison < 0) {
-            throw new Exception("Word cant be alphabetically smaller than the set");
+            System.out.println(w + " is not a valid word");
+            throw new Exception("Word cant be alphabetically smaller than the class word");
         } else if (comparison == 0) {
 //            It increments count if w is equal to word.
             this.count = this.count + 1;
@@ -40,9 +41,6 @@ public class MyLinkedObject {
                 }
             }
         }
-
-
-        this.word = w;
     }
 
     public boolean isWord(String w) {
@@ -75,5 +73,13 @@ public class MyLinkedObject {
 
     public String getWord() {
         return this.word;
+    }
+
+    public MyLinkedObject getNext() {
+        return this.next;
+    }
+
+    public void setNext (MyLinkedObject next) {
+        this.next = next;
     }
 }
