@@ -40,7 +40,7 @@ public class MyHashTable {
             System.out.printf("Bucket %d: ", i);
             MyLinkedObject current = table[i];
             while (current != null) {
-                System.out.printf("%s -> ", current.getWord());
+                System.out.printf("%s (%s) -> ", current.getWord(), current.getCount(current.getWord()));
                 current = current.getNext();
             }
             System.out.println("null");

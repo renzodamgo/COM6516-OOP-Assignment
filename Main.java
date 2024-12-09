@@ -26,7 +26,7 @@ public class Main {
         MyHashTable hashTable = new MyHashTable(tableSize, hashFunction);
 
         // Test insertions
-        String[] words = {"peach", "papaya", "pablo","pear", "pan"};
+        String[] words = {"peach", "papaya", "pablo","pear", "pan", "pablo","pear", "pan"};
         for (String word : words) {
             hashTable.insert(word);
         }

@@ -6,7 +6,7 @@ public class MyLinkedObject {
 
     public MyLinkedObject(String w) {
         this.word = w;
-        this.count = 0;
+        this.count = 1;
         this.next = null;
     }
 
