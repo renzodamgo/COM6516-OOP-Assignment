@@ -2,12 +2,12 @@ public class PolynomialHash extends MyHashFunction {
     private final int base = 31;              // Base value (A)
     private final long prime = 1000000007L; // Prime modulus (P)
 
-    public PolynomialHash(long m) {
+    public PolynomialHash(int m) {
         super(m);
     }
 
     @Override
-    public long hash(String str) {
+    public int hash(String str) {
         long hash = 0;
         long power = 1;
 
@@ -15,6 +15,6 @@ public class PolynomialHash extends MyHashFunction {
             hash = (hash + (str.charAt(i) * power) % prime) % prime;
             power = (power * base) % prime;
         }
-        return hash % this.tableSize;
+        return  (int) hash % this.tableSize;
     }
 }

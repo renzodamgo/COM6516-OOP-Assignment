@@ -1,10 +1,10 @@
 public class AdditiveHash extends MyHashFunction {
-    public AdditiveHash(long m) {
+    public AdditiveHash(int m) {
         super(m);
     }
 
     @Override
-    public long hash(String word) {
+    public int hash(String word) {
         if (word == null || word.isEmpty()) {
             throw new IllegalArgumentException("Word cannot be null or empty");
         }
