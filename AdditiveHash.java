@@ -1,5 +1,5 @@
-public class FirstLetterHash extends MyHashFunction {
-    public FirstLetterHash(long m) {
+public class AdditiveHash extends MyHashFunction {
+    public AdditiveHash(long m) {
         super(m);
     }
 
@@ -8,6 +8,10 @@ public class FirstLetterHash extends MyHashFunction {
         if (word == null || word.isEmpty()) {
             throw new IllegalArgumentException("Word cannot be null or empty");
         }
-        return word.charAt(0) % tableSize;
+        int sum = 0;
+        for (char c : word.toCharArray()) {
+            sum += c;
+        }
+        return sum % tableSize;
     }
 }

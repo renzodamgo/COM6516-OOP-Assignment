@@ -1,12 +1,12 @@
 public abstract class MyHashFunction {
-    protected int tableSize;
+    protected long tableSize;
 
-    public MyHashFunction(int m) {
+    public MyHashFunction(long m) {
         if (m <= 0) {
             throw new IllegalArgumentException("Hash table size must be positive");
         }
         this.tableSize = m;
     }
 
-    public abstract int hash(String word);
+    public abstract long hash(String word);
 }

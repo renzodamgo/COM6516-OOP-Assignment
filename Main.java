@@ -9,5 +9,17 @@ public class Main {
         for (String word : testWords) {
             System.out.printf("Word: %s, Hash: %d%n", word, firstLetterHash.hash(word));
         }
+
+        MyHashFunction additiveHash = new AdditiveHash(tableSize);
+        System.out.println("Additive Hash:");
+        for (String word : testWords) {
+            System.out.printf("Word: %s, Hash: %d%n", word, additiveHash.hash(word));
+        }
+
+        MyHashFunction polynomialHash = new PolynomialHash(tableSize);
+        System.out.println("Polynomial Hash:");
+        for (String word : testWords) {
+            System.out.printf("Word: %s, Hash: %d%n", word, polynomialHash.hash(word));
+        }
     }
 }
