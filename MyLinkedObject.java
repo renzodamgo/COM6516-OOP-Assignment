@@ -45,6 +45,34 @@ public class MyLinkedObject {
         this.word = w;
     }
 
+    public boolean isWord(String w) {
+        if (this.word.equals(w)) {
+//            This method returns true if the parameter w matches the word field of this object.
+            return true;
+        }
+        if (this.next != null) {
+//            If this object does not
+//            match w, and if the next object exists, it tests the next object using recursive coding.
+            return this.next.isWord(w);
+        }
+//        If this object does not
+//        match w, and if the next object does not exist (i.e., null), it returns false.
+        return false;
+    }
+
+    public int getCount(String w) {
+//        This method returns the value stored in the countfield if the parameter wmatches the wordfield of this object.
+        if (this.word.equals(w)) {
+            return this.count;
+        }
+//        f this object does not match w, and if the next object exists, it tests the next object using recursive coding. I
+        if (this.next != null) {
+            return this.next.getCount(w);
+        }
+//        If this object does not match w, and if the next object does not exist (i.e., null), it returns 0 (zero).
+        return 0;
+    }
+
     public String getWord() {
         return this.word;
     }
